@@ -1,0 +1,68 @@
+.mobile-header {
+  background: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* ① Safe Area */
+.header-safe-area {
+  height: 28px; /* status bar space */
+}
+
+/* ② Navigation Row */
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px 8px;
+}
+
+.menu-btn {
+  font-size: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #000;
+}
+
+.header-title {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+  color: #000;
+}
+
+.header-title span {
+  font-weight: 700;
+}
+
+/* ③ Search Row */
+.header-search {
+  margin: 8px 16px 12px;
+  display: flex;
+  align-items: center;
+  background: #f3f3f3;
+  border-radius: 14px;
+  padding: 10px 12px;
+  gap: 8px;
+}
+
+.header-search input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: #0c0c0c;
+}
+
+.search-icon,
+.mic-icon {
+  font-size: 18px;
+  color: #8a8a8a;
+}
+
+.mic-icon {
+  color: #ff4d4f; /* subtle accent like apps */
+}

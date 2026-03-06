@@ -1,0 +1,83 @@
+.hero-cards {
+  padding: 0 16px 12px;
+}
+
+/* header row */
+.hero-cards-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.hero-cards-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.hero-cards-header button {
+  background: none;
+  border: none;
+  font-size: 13px;
+  color: #2563eb;
+  cursor: pointer;
+}
+
+/* cards list */
+.hero-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* single card */
+.hero-card {
+  position: relative;
+  height: 160px; /* FIXED HEIGHT */
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+/* image */
+.hero-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* overlay */
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.65),
+    rgba(0, 0, 0, 0.05)
+  );
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* text */
+.card-overlay h4 {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.card-overlay p {
+  color: #e5e7eb;
+  font-size: 12px;
+  margin: 2px 0 0;
+}
+
+/* tap feedback */
+.hero-card:active {
+  transform: scale(0.97);
+}

@@ -1,0 +1,32 @@
+/* ===== MOBILE BASE ONLY ===== */
+/* Header & Footer CSS alag files me hi rahenge */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #f5f5f5; /* neutral base */
+}
+
+/* Mobile root wrapper */
+.mobile-root {
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: #f5f5f5;
+}
+
+/* Main mobile container (content area only) */
+.mobile-container {
+  min-height: 100vh;
+  width: 100%;
+  background: #f5f5f5;
+  color: #000;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  padding-bottom: 90px; /* footer ke liye space */
+}
+
+/* Generic section spacing (cards, content blocks) */
+.mobile-section {
+  margin: 16px;
+}

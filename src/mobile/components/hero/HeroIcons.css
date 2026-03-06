@@ -1,0 +1,67 @@
+.hero-icons-wrapper {
+  padding: 12px 0;
+}
+
+.hero-icons-scroll {
+  display: flex;
+  gap: 14px;
+  padding: 0 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* scrollbar completely hidden */
+.hero-icons-scroll::-webkit-scrollbar {
+  display: none;
+}
+.hero-icons-scroll {
+  scrollbar-width: none;
+}
+
+.hero-icon {
+  scroll-snap-align: start;
+  background: none;
+  border: none;
+  min-width: 72px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: #111;
+  cursor: pointer;
+}
+
+.icon-box {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-box svg {
+  font-size: 22px;
+  color: #ffffff; /* icon always white */
+}
+
+.hero-icon span {
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* See More special style */
+.hero-icon.see-more .icon-box {
+  background: #e5e7eb;
+}
+
+.hero-icon.see-more svg {
+  color: #111;
+}
+
+/* tap feedback */
+.hero-icon:active .icon-box {
+  transform: scale(0.95);
+}

@@ -1,0 +1,89 @@
+.special-wrapper {
+  max-width: 1380px;
+  margin: 60px auto;
+  padding: 0 24px;
+}
+
+.special-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 28px;
+  color: #222;
+  text-align: center;
+}
+
+/* 4 Cards Layout */
+.special-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 28px;
+}
+
+/* Card Base */
+.special-card {
+  height: 220px;
+  border-radius: 14px;
+  padding: 20px;
+  color: white;
+  display: flex;
+  align-items: flex-end;
+  font-size: 20px;
+  font-weight: 600;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Dark overlay */
+.special-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.2));
+  transition: background 0.4s ease;
+  z-index: 1;
+}
+
+/* Text above overlay */
+.special-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Hover Effect */
+.special-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+/* Overlay becomes slightly lighter on hover */
+.special-card:hover::before {
+  background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.3));
+}
+
+/* Individual Images */
+
+.card-one {
+  background-image: url("/src/assets/cityOnline.png");
+}
+
+.card-two {
+  background-image: url("/src/assets/liveBazar.png");
+}
+
+.card-three {
+  background-image: url("/src/assets/streetMarket.png");
+}
+
+.card-four {
+  background-image: url("/src/assets/hotel_restaurnts.png");
+}
+
+.card-link {
+  text-decoration: none;
+  display: block;
+}
