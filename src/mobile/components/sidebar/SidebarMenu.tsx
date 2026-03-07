@@ -6,9 +6,14 @@ type Props = {
 
 const menu = [
   { label: "Home", path: "/" },
-  { label: "Explore Bihar", path: "/explore" },
-  { label: "Serving Cities", path: "/cities" },
-  { label: "Bhaiya GPT", path: "/ai" },
+  { label: "City Services", path: "/" },
+  { label: "Medical", path: "/" },
+  { label: "Health & Beauty", path: "/" },
+  { label: "Education", path: "/" },
+  { label: "Reak Estate", path: "/" },
+  { label: "Explore States", path: "/" },
+  { label: "Cab Service", path: "/" },
+  { label: "24/7 Support", path: "/" },
 ];
 
 const SidebarMenu = ({ onItemClick }: Props) => {

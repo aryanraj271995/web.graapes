@@ -24,7 +24,7 @@ const MobileHeader = ({ onMenuClick, city }: Props) => {
         </button>
 
         <h1 className="header-title">
-          Discover <span>{city}</span>
+          Connecting <span>{city}</span>
         </h1>
       </div>
 

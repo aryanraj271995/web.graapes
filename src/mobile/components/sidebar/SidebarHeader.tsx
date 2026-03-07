@@ -12,6 +12,14 @@ const SidebarHeader = ({ onClose, city, setCity }: Props) => {
   const [manualCity, setManualCity] = useState("");
 
   useEffect(() => {
+
+    // ✅ check saved city first
+    const savedCity = localStorage.getItem("selectedCity");
+    if (savedCity) {
+      setCity(savedCity);
+      return;
+    }
+
     if (!navigator.geolocation) {
       setShowManual(true);
       return;
@@ -22,22 +30,39 @@ const SidebarHeader = ({ onClose, city, setCity }: Props) => {
     navigator.geolocation.getCurrentPosition(
       async (pos) => {
         try {
+
           const { latitude, longitude } = pos.coords;
 
           const res = await fetch(
-            `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`
+            `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}&zoom=10&addressdetails=1`
           );
-          const data = await res.json();
 
+          const data = await res.json();
+          const address = data.address;
+
+          // ✅ correct priority (city first)
           const detectedCity =
-            data.address?.city ||
-            data.address?.town ||
-            data.address?.village ||
-            data.address?.state;
+            address?.city ||
+            address?.town ||
+            address?.village ||
+            address?.municipality ||
+            address?.county ||
+            address?.state_district ||
+            address?.state;
+
+          const state = address?.state || "";
 
           if (detectedCity) {
-            setCity(detectedCity);
+
+            const fullCity = state
+              ? `${detectedCity}, ${state}`
+              : detectedCity;
+
+            setCity(fullCity);
+            localStorage.setItem("selectedCity", fullCity);
+
           }
+
         } catch (e) {
           // silent fail
         } finally {
@@ -84,7 +109,9 @@ const SidebarHeader = ({ onClose, city, setCity }: Props) => {
             <button
               onClick={() => {
                 if (manualCity.trim()) {
-                  setCity(manualCity.trim());
+                  const manual = manualCity.trim();
+                  setCity(manual);
+                  localStorage.setItem("selectedCity", manual);
                   setManualCity("");
                   onClose();
                 }

@@ -5,7 +5,7 @@ const SidebarFooter = () => {
         Continue with account
       </button>
 
-      <small>v1.0.0 · Serving Bihar</small>
+      <small>v1.0.0 · Graapes.com</small>
     </div>
   );
 };
