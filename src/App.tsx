@@ -8,10 +8,14 @@ import MobileApp from "./mobile/MobileApp";
 function App() {
   const { isMobile } = useDevice();
 
+  if (isMobile) {
+    return <MobileApp />;
+  }
+
   return (
     <Routes>
       <Route element={<MainLayout />}>
-        <Route path="/*" element={isMobile ? <MobileApp /> : <Home />} />
+        <Route path="/*" element={<Home />} />
       </Route>
     </Routes>
   );

@@ -1,8 +1,9 @@
 .mobile-header {
 
   padding: 14px 16px;
+  max-width: 480px;
   background: linear-gradient(180deg,#8c499a,#1a0033);
-
+  
 }
 
 /* QUICK SERVICES */
