@@ -1,5 +1,6 @@
 .hero-cards {
   padding: 0 16px 12px;
+  background: linear-gradient(180deg,#1a0033,#1a0033);
 }
 
 /* header row */
@@ -13,14 +14,15 @@
 .hero-cards-header h3 {
   font-size: 16px;
   font-weight: 600;
-  margin: 0;
+  margin: 5px;
+  color: #fafafa;
 }
 
 .hero-cards-header button {
   background: none;
   border: none;
   font-size: 13px;
-  color: #2563eb;
+  color: #fafafa;
   cursor: pointer;
 }
 

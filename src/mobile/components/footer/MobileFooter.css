@@ -4,9 +4,9 @@
   left: 0px;
   right: 0px;
   box-sizing: border-box;
-  height: 64px;
-  background: #ffffff;
-  border-radius: 24px;
+  height: 65px;
+  background: linear-gradient(180deg,#8c499a,#1a0033);
+ 
   max-width: 480px;
    width: 100%;
   display: flex;
@@ -22,7 +22,7 @@
   flex: 1;
   text-align: center;
   text-decoration: none;
-  color: #0c0c0c;
+  color: #ffffff;
 
   display: flex;
   flex-direction: column;
@@ -39,7 +39,7 @@
 
 /* active state (pink like reference) */
 .footer-item.active {
-  color: #5f4dff;
+  color: #ffcb21;
 }
 
 /* bottom line indicator */
