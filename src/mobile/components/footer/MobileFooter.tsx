@@ -16,6 +16,11 @@ export default function MobileFooter({ openCategories }: Props) {
         <span>Home</span>
       </NavLink>
 
+      <NavLink to="/account" className="footer-item">
+        <FiUser />
+        <span>Account</span>
+      </NavLink>
+
       <div className="footer-item" onClick={openCategories}>
         <FiGrid />
         <span>Categories</span>
@@ -25,11 +30,6 @@ export default function MobileFooter({ openCategories }: Props) {
         <CgMore />
         <span>More</span>
       </div>
-
-      <NavLink to="/account" className="footer-item">
-        <FiUser />
-        <span>Account</span>
-      </NavLink>
 
     </footer>
   );

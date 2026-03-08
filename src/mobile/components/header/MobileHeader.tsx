@@ -1,42 +1,71 @@
 import { useNavigate } from "react-router-dom";
 import "./MobileHeader.css";
-import {  FiMic } from "react-icons/fi";
+import { FiMic, FiMapPin, FiChevronRight } from "react-icons/fi";
+import { FaAmbulance, FaTaxi, FaTools, FaHeadset } from "react-icons/fa";
 
 type Props = {
-  onMenuClick?: () => void;
   city: string;
+  onLocationClick: () => void;
 };
 
-const MobileHeader = ({ onMenuClick, city }: Props) => {
+const MobileHeader = ({ city, onLocationClick }: Props) => {
   const navigate = useNavigate();
 
   return (
     <header className="mobile-header">
-      <div className="header-safe-area" />
 
-      <div className="header-nav">
-        <button
-          className="menu-btn"
-          onClick={onMenuClick}
-          aria-label="Menu"
-        >
-          ☰
-        </button>
+      {/* Quick Services */}
+      <div className="quick-services">
 
-        <h1 className="header-title">
-          Connecting <span>{city}</span>
-        </h1>
+        <div className="service-box">
+          <FaAmbulance />
+          <span>Emergency</span>
+        </div>
+
+        <div className="service-box">
+          <FaTaxi />
+          <span>Travel</span>
+        </div>
+
+        <div className="service-box">
+          <FaTools />
+          <span>Service</span>
+        </div>
+
+        <div className="service-box">
+          <FaHeadset />
+          <span>Support</span>
+        </div>
+
       </div>
 
+      {/* Location Row */}
+      <div
+        className="location-row"
+        role="button"
+        onClick={onLocationClick}
+      >
+        <div className="location-left">
+          <FiMapPin />
+          <span>{city}</span>
+        </div>
+
+        <FiChevronRight className="location-arrow" />
+      </div>
+
+      {/* Search */}
       <div className="header-search">
-        
+
         <input
           type="text"
-          placeholder="What are you looking for?"
+          placeholder="Search services, places..."
           onFocus={() => navigate("/search")}
         />
+
         <FiMic className="mic-icon" />
+
       </div>
+
     </header>
   );
 };

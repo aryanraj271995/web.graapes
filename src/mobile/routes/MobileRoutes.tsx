@@ -1,24 +1,30 @@
 import { Routes, Route } from "react-router-dom";
 import MobileHome from "../pages/MobileHome";
 import MobileHeader from "../components/header/MobileHeader";
+import AccountPage from "../pages/AccountPage";   // ⭐ add
 
 type Props = {
   city: string;
-  onMenuClick: () => void;
+  onLocationClick: () => void;
 };
 
-export default function MobileRoutes({ city, onMenuClick }: Props) {
+export default function MobileRoutes({ city, onLocationClick }: Props) {
   return (
-    <Routes>
-      <Route
-        path="/"
-        element={
-          <>
-            <MobileHeader city={city} onMenuClick={onMenuClick} />
-            <MobileHome />
-          </>
-        }
-      />
-    </Routes>
+    <>
+      <MobileHeader city={city} onLocationClick={onLocationClick} />
+
+      <Routes>
+        <Route
+          path="/"
+          element={<MobileHome />}
+        />
+
+        {/* ⭐ new route */}
+        <Route 
+          path="/account" 
+          element={<AccountPage />} />
+
+      </Routes>
+    </>
   );
 }

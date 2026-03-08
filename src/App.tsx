@@ -11,11 +11,10 @@ function App() {
   return (
     <Routes>
       <Route element={<MainLayout />}>
-        <Route path="/" element={isMobile ? <MobileApp /> : <Home />} />
+        <Route path="/*" element={isMobile ? <MobileApp /> : <Home />} />
       </Route>
     </Routes>
   );
 }
 
 export default App;
-
