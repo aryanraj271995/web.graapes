@@ -24,10 +24,8 @@
 /* CARD */
 
 .service-box {
-
-  background: linear-gradient(145deg,#ffffff,#f6f7ff);
-
-  border-radius: 16px;
+  background: linear-gradient(145deg, #ffffff, #fcfcff);
+  border-radius: 14px;
 
   padding: 14px 6px;
 
@@ -41,23 +39,15 @@
 
   border: 1px solid #ececff;
 
-  box-shadow:
-  0 4px 12px rgba(0,0,0,0.08),
-  inset 0 1px 0 rgba(255,255,255,0.6);
-
-  transition: all 0.25s ease;
-
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* hover */
 
-.service-box:hover {
-
-  transform: translateY(-3px);
-
-  box-shadow:
-  0 8px 20px rgba(106,92,255,0.25);
-
+.service-box:hover, .service-box:active {
+  transform: scale(0.96);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 /* icon */
@@ -113,23 +103,24 @@
 /* LOCATION ROW */
 
 .location-row {
-
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  background: #eef2ff;
-
-  border-radius: 10px;
-
-  padding: 10px 12px;
-
-  margin-bottom: 12px;
-
-  font-size: 13px;
-
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 16px;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
   cursor: pointer;
+  transition: background 0.2s;
+}
 
+.location-row:active {
+  background: rgba(255, 255, 255, 0.25);
 }
 
 .location-left {
@@ -167,24 +158,40 @@
 
 }*/
 
-.header-search input{
-  width:100%;
-  box-sizing:border-box;   /* important */
-  padding:12px 40px 12px 14px;
-  border-radius:10px;
-  border:1px solid #d9dcff;
-  font-size:14px;
+.header-search input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 44px 14px 16px;
+  border-radius: 24px; /* Fully rounded pill */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: white;
+  font-size: 15px;
+  color: #1a1a24;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  outline: none;
 }
 
 .mic-icon {
-
   position: absolute;
   right: 12px;
   top: 50%;
-
   transform: translateY(-50%);
-
   font-size: 18px;
   color: #6a5cff;
+}
 
+/* ================= EMERGENCY PULSE (PHASE 4) ================= */
+.service-box:nth-child(1) {
+  animation: urgentPulse 2.5s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  border-color: rgba(239, 68, 68, 0.15);
+}
+
+.service-box:nth-child(1) svg {
+  color: #ef4444 !important;
+}
+
+@keyframes urgentPulse {
+  0% { box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05), 0 0 0 0 rgba(239, 68, 68, 0.25); }
+  50% { box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05), 0 0 0 14px rgba(239, 68, 68, 0); }
+  100% { box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05), 0 0 0 0 rgba(239, 68, 68, 0); }
 }

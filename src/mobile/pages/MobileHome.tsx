@@ -13,7 +13,7 @@ export default function MobileHome() {
 
   return (
     <>
-      <main>
+      <main className="mobile-main-content">
         <HeroIcons />
         <HeroSlider />
         <HeroCards />

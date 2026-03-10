@@ -55,6 +55,12 @@ export default function HeroSlider() {
           </div>
         ))}
       </div>
+
+      <div className="hero-slider-dots">
+        {SLIDES.map((_, i) => (
+          <div key={i} className={`slider-dot ${i === index ? "active" : ""}`} />
+        ))}
+      </div>
     </div>
   );
 }

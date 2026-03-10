@@ -12,10 +12,11 @@
 }
 
 .hero-cards-header h3 {
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 700;
   margin: 5px;
   color: #fafafa;
+  letter-spacing: -0.3px;
 }
 
 .hero-cards-header button {
@@ -56,30 +57,51 @@
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(0, 0, 0, 0.65),
-    rgba(0, 0, 0, 0.05)
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0.2) 60%,
+    transparent 100%
   );
-  padding: 14px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
 
+/* Glass effect behind text */
+.card-overlay::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: -1;
+}
+
 /* text */
 .card-overlay h4 {
   color: #fff;
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 700;
   margin: 0;
+  letter-spacing: 0.2px;
 }
 
 .card-overlay p {
-  color: #e5e7eb;
-  font-size: 12px;
-  margin: 2px 0 0;
+  color: #f1f5f9;
+  font-size: 13px;
+  margin: 4px 0 0;
+  opacity: 0.9;
 }
 
 /* tap feedback */
+.hero-card {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 .hero-card:active {
-  transform: scale(0.97);
+  transform: scale(0.96);
 }

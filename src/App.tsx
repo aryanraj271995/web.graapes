@@ -13,11 +13,14 @@ function App() {
   }
 
   return (
-    <Routes>
-      <Route element={<MainLayout />}>
-        <Route path="/*" element={<Home />} />
-      </Route>
-    </Routes>
+    <>
+      <div className="ambient-orb"></div>
+      <Routes>
+        <Route element={<MainLayout />}>
+          <Route path="/*" element={<Home />} />
+        </Route>
+      </Routes>
+    </>
   );
 }
 

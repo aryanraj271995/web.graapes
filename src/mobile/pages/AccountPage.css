@@ -17,22 +17,22 @@
 }
 
 .back-btn{
-  width:40px;
-  height:40px;
-
+  width:44px;
+  height:44px;
   border:none;
-  border-radius:14px;
-
+  border-radius:50%; /* Perfect circle */
   background:white;
-
   display:flex;
   align-items:center;
   justify-content:center;
-
-  box-shadow:
-  0 8px 20px rgba(0,0,0,0.08);
-
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
   cursor:pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.back-btn:active {
+  transform: scale(0.92);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
 .account-topbar h2{
@@ -43,25 +43,34 @@
 /* PROFILE HERO CARD */
 
 .profile-card{
-
   display:flex;
   align-items:center;
   gap:16px;
-
-  padding:18px;
-
-  border-radius:22px;
-
-  background:
-  linear-gradient(135deg,#7c6cff,#5a48ff);
-
+  padding:22px;
+  border-radius:24px;
+  background: linear-gradient(135deg, rgba(124, 108, 255, 0.9), rgba(90, 72, 255, 0.9));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   color:white;
+  box-shadow: 
+    0 16px 36px rgba(92, 80, 255, 0.3),
+    inset 0 1px 1px rgba(255, 255, 255, 0.4);
+  margin-bottom:30px;
+  position: relative;
+  overflow: hidden;
+}
 
-  box-shadow:
-  0 14px 30px rgba(92,80,255,0.35);
-
-  margin-bottom:26px;
-
+/* Add a subtle aesthetic flare to the card */
+.profile-card::after {
+  content: "";
+  position: absolute;
+  top: -40px;
+  right: -20px;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
 }
 
 .avatar{
@@ -120,16 +129,11 @@
 /* SETTINGS CARD */
 
 .account-list{
-
   background:white;
-
-  border-radius:22px;
-
+  border-radius:24px;
   overflow:hidden;
-
-  box-shadow:
-  0 12px 30px rgba(0,0,0,0.08);
-
+  box-shadow: 0 12px 35px rgba(0,0,0,0.06);
+  border: 1px solid rgba(0,0,0,0.02);
 }
 
 /* ITEM */
@@ -168,8 +172,8 @@
 
 /* hover effect */
 
-.account-item:hover{
-  background:#fafbff;
+.account-item:active{
+  background:#f5f6fa;
 }
 
 /* remove last divider */

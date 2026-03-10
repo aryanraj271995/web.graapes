@@ -4,12 +4,33 @@
   padding: 0 24px;
 }
 
-.special-title {
-  font-size: 22px;
-  font-weight: 700;
-  margin-bottom: 28px;
-  color: #222;
+.hero-text-container {
   text-align: center;
+  margin-bottom: 40px;
+}
+
+.special-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #1a1a24;
+  letter-spacing: -0.5px;
+}
+
+.highlight-city {
+  background: linear-gradient(90deg, #6a5cff, #b65cff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.special-subtitle {
+  font-size: 16px;
+  color: #666;
+  font-weight: 400;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 /* 4 Cards Layout */
@@ -21,13 +42,13 @@
 
 /* Card Base */
 .special-card {
-  height: 220px;
-  border-radius: 14px;
-  padding: 20px;
+  height: 240px;
+  border-radius: 18px;
+  padding: 24px;
   color: white;
   display: flex;
   align-items: flex-end;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 600;
   background-size: cover;
   background-position: center;
@@ -35,7 +56,29 @@
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+  /* Animation */
+  opacity: 0;
+  animation: staggerFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Staggered Delay for Cards */
+.card-link:nth-child(1) .special-card { animation-delay: 0.1s; }
+.card-link:nth-child(2) .special-card { animation-delay: 0.2s; }
+.card-link:nth-child(3) .special-card { animation-delay: 0.3s; }
+.card-link:nth-child(4) .special-card { animation-delay: 0.4s; }
+
+@keyframes staggerFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Dark overlay */
@@ -43,8 +86,8 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.2));
-  transition: background 0.4s ease;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.1) 60%);
+  transition: opacity 0.4s ease;
   z-index: 1;
 }
 
@@ -56,13 +99,23 @@
 
 /* Hover Effect */
 .special-card:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
 /* Overlay becomes slightly lighter on hover */
 .special-card:hover::before {
-  background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.3));
+  opacity: 0.85;
+}
+
+.special-card h3 {
+  margin: 0;
+  transform: translateY(0);
+  transition: transform 0.4s ease;
+}
+
+.special-card:hover h3 {
+  transform: translateY(-4px);
 }
 
 /* Individual Images */

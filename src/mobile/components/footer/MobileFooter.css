@@ -1,21 +1,25 @@
 .mobile-footer {
   position: fixed;
   bottom: 0;
-  left: 0px;
-  right: 0px;
-  box-sizing: border-box;
-  height: 65px;
-  background: linear-gradient(180deg,#8c499a,#1a0033);
- 
+  left: 0;
+  right: 0;
+  height: 72px; /* Slightly taller for modern phones */
+  
+  background: rgba(26, 0, 51, 0.85); /* Deep purple glass */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  
   max-width: 480px;
-   width: 100%;
+  margin: 0 auto;
+  
   display: flex;
   justify-content: space-around;
   align-items: center;
- margin: auto;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
   z-index: 200;
-  max-width: 100%;
+  padding-bottom: env(safe-area-inset-bottom, 8px); /* Safe area for modern phones */
 }
 
 /* footer item */
@@ -23,24 +27,31 @@
   flex: 1;
   text-align: center;
   text-decoration: none;
-  color: #ffffff;
-
+  color: #a3a3b8;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2px;
-
-  font-size: 10px;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  position: relative;
 }
 
 /* icons */
 .footer-item svg {
-  font-size: 20px;
+  font-size: 24px;
+  transition: transform 0.2s ease;
 }
 
-/* active state (pink like reference) */
+/* tap feedback */
+.footer-item:active svg {
+  transform: scale(0.85);
+}
+
+/* active state */
 .footer-item.active {
-  color: #ffcb21;
+  color: #eab308; /* Vibrant yellow */
 }
 
 /* bottom line indicator */

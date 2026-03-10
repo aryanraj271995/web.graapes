@@ -52,6 +52,8 @@ function MobileApp() {
 
   return (
     <>
+      <div className="ambient-orb"></div>
+      
       {showLocation && (
         <LocationPopup
           city={city}

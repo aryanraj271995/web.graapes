@@ -5,19 +5,17 @@
 
 .hero-icons-scroll {
   display: flex;
-  gap: 14px;
+  gap: 16px;
   padding: 0 16px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
 
 /* scrollbar completely hidden */
 .hero-icons-scroll::-webkit-scrollbar {
   display: none;
-}
-.hero-icons-scroll {
-  scrollbar-width: none;
 }
 
 .hero-icon {
@@ -63,6 +61,10 @@
 }
 
 /* tap feedback */
-.hero-icon:active .icon-box {
-  transform: scale(0.95);
+.hero-icon {
+  transition: transform 0.2s;
+}
+
+.hero-icon:active {
+  transform: scale(0.92);
 }

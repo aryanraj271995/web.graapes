@@ -24,9 +24,12 @@ export default function Cards() {
 
   return (
     <div className="special-wrapper">
-      <h2 className="special-title">
-        Welcome to {city?.split(",")[0]} an Online Virtual City.
-      </h2>
+      <div className="hero-text-container">
+        <h2 className="special-title">
+          Welcome to <span className="highlight-city">{city?.split(",")[0]}</span> an Online Virtual City.
+        </h2>
+        <p className="special-subtitle">Explore top-rated services, markets, and essentials across the city.</p>
+      </div>
 
       <div className="special-grid">
         {products.map((item, index) => (
